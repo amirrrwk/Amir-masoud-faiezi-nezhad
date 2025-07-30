@@ -1,0 +1,37 @@
+#include <iostream>
+
+
+
+using namespace std;
+
+
+
+int Max(int A[],int length){
+
+    int max = A[0];
+
+    for(int i=1; i<length; i++){
+
+        if(A[i]>max){
+
+            max=A[i];
+
+        }
+
+    }
+
+    return max;
+
+}
+
+
+
+int main(){
+
+    int numbers[]={5,2,6,4,1,2};
+
+    cout << Max(numbers,sizeof (numbers)/sizeof(numbers [0]));
+
+    return 0;
+
+}
