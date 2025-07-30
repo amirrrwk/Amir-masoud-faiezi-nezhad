@@ -1,0 +1,104 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+class person{
+
+    protected:
+
+    string firstName;
+
+    string lastName;
+
+
+
+    public:
+
+    // constructor
+
+    person(string firstname, string lastname) : firstName(firstname), lastName(lastname) {}
+
+
+
+    void showinfo(){
+
+        cout << "Name: " << firstName << " " << lastName << "\n";
+
+    }
+
+};
+
+class Student : public person{
+
+    private:
+
+    float studentGrade;
+
+
+
+    public:
+
+    Student(string firstname , string lastname , float grade) : person(firstname , lastname),studentGrade (grade){}
+
+
+
+     void showstudentinfo(){
+
+        showinfo();
+
+        cout << "Grade: " << studentGrade << "\n";
+
+     }
+
+};
+
+class Teacher : public person{
+
+    private:
+
+    float teacherSalary;
+
+
+
+    public:
+
+    Teacher(string firstname , string lastname , float salary) : person(firstname , lastname),teacherSalary(salary){}
+
+
+
+    void showteacherinfo(){
+
+        showinfo();
+
+        cout << "Salary: " << teacherSalary  << "\n";
+
+    }
+
+};
+
+
+
+int main(){
+
+    Student student("Amir","Fayezi Nezhad",16.5);
+
+    Teacher teacher("Iman","Khosrogerdi",20000000);
+
+
+
+    cout << "Student Info: "  << "\n";
+
+    student.showstudentinfo();
+
+
+
+    cout << "Teacher Info: " << "\n";
+
+    teacher.showteacherinfo();
+
+
+
+    return 0;
+
