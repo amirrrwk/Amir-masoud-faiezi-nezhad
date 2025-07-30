@@ -1,0 +1,67 @@
+#include <iostream>
+
+
+
+using namespace std;
+
+
+
+struct person_info{
+
+    int age;
+
+    string name;
+
+};
+
+
+
+double showInfo(person_info p[],int size){
+
+    double Age=0;
+
+    for(int i=0;i<size;i++){
+
+        Age += p[i].age;
+
+    }
+
+    double Avg=Age/size;
+
+    return Avg;
+
+}
+
+int main(){
+
+    int size=10;
+
+    person_info people[size]={
+
+        {35,"ahmad"},
+
+        {20,"reza"},
+
+        {48,"mohammad"},
+
+        {18,"hamid"},
+
+        {31,"ali"},
+
+        {26,"hossein"},
+
+        {34,"sina"},
+
+        {21,"javad"},
+
+        {42,"amir"},
+
+        {23,"morteza"}
+
+    };
+
+    cout << showInfo(people,size);
+
+    return 0;
+
+}
