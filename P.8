@@ -1,0 +1,77 @@
+#include <iostream>
+
+#include <string>
+
+
+
+using namespace std;
+
+
+
+class AgeCalculate{
+
+    private:
+
+    int* age;
+
+    string* name;
+
+    int size;
+
+    
+
+
+
+    public:
+
+
+
+    AgeCalculate(string name[],int age[],int size) : name(name),age(age),size(size){}
+
+    
+
+    void print_names_and_ages(){
+
+        for(int i=0 ; i<size ; i++){
+
+            cout<<name[i]<<age[i]<<'\n';
+
+        }
+
+    }
+    double avg_age(){
+
+        double sum=0;
+
+        for(int i=0 ; i<size ; i++){
+
+            sum=sum+age[i];
+
+        }
+
+        return sum/size;
+
+    }
+
+
+
+};
+
+int main(){
+    int count =15;
+
+    string name[count]={"sepehr","ali ","soheil ","amir ","mostafa ","kalim ","sobhan ","behrad ","reza ","sina ","mohammad ","hossein ","mehdi ","sajad ","alireza "};
+
+    int age[count]={15,20,26,31,24,19,36,21,22,33,42,29,16,36,25};
+
+    AgeCalculate age_calculate(name,age,count);
+
+    age_calculate.print_names_and_ages();
+
+    cout << "the avg is : "<<age_calculate.avg_age()<<'\n';
+
+    
+
+    return 0;
+
+}
